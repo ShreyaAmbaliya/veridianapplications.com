@@ -60,10 +60,15 @@
         <div class="card support-card">
           <h2 id="contact-heading">Contact Support</h2>
           <p>For assistance, email us anytime.</p>
-          <a class="btn btn-primary" href="mailto:admin@veridianapplications.com"
+          <a class="btn btn-primary" id="email-support"
+            href="mailto:admin@veridianapplications.com"
             aria-label="Email support at admin@veridianapplications.com">
             Email Support
           </a>
+          <p class="support-fallback">
+            <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=admin@veridianapplications.com"
+              target="_blank" rel="noopener noreferrer">Open in Gmail</a>
+          </p>
         </div>
       </div>
     </section>
@@ -143,12 +148,29 @@
     (function () {
       var toggle = document.querySelector(".nav-toggle");
       var menu = document.getElementById("nav-menu");
-      if (!toggle || !menu) return;
+      if (toggle && menu) {
+        toggle.addEventListener("click", function () {
+          var open = menu.classList.toggle("is-open");
+          toggle.setAttribute("aria-expanded", open ? "true" : "false");
+          toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+        });
+      }
 
-      toggle.addEventListener("click", function () {
-        var open = menu.classList.toggle("is-open");
-        toggle.setAttribute("aria-expanded", open ? "true" : "false");
-        toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+      var email = "admin@veridianapplications.com";
+      var gmail = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(email);
+      var link = document.getElementById("email-support");
+      if (!link) return;
+
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        var left = false;
+        var onBlur = function () { left = true; };
+        window.addEventListener("blur", onBlur);
+        window.location.href = "mailto:" + email;
+        setTimeout(function () {
+          window.removeEventListener("blur", onBlur);
+          if (!left) window.open(gmail, "_blank", "noopener,noreferrer");
+        }, 700);
       });
     })();
   </script>

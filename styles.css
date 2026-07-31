@@ -464,6 +464,21 @@ main {
   margin-bottom: 1.75rem;
 }
 
+.support-card .support-fallback {
+  margin: 1rem 0 0;
+  font-size: 0.875rem;
+}
+
+.support-card .support-fallback a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.support-card .support-fallback a:hover {
+  color: var(--secondary);
+}
+
 /* --- FAQ --- */
 .faq {
   padding: 1rem 0 5rem;
