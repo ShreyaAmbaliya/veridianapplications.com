@@ -628,6 +628,102 @@ main {
   font-weight: 600;
 }
 
+/* --- Content pages (delete account, etc.) --- */
+.content-section {
+  padding: 0 0 2.5rem;
+}
+
+.content-section:last-of-type {
+  padding-bottom: 5rem;
+}
+
+.content-narrow {
+  max-width: 720px;
+}
+
+.content-card {
+  padding: 2rem 1.75rem;
+}
+
+.content-card h2 {
+  font-size: 1.35rem;
+  margin-bottom: 1rem;
+}
+
+.content-card p {
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+
+.content-card p:last-child {
+  margin-bottom: 0;
+}
+
+.content-card strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.content-card a {
+  color: var(--secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.content-card a:hover {
+  color: var(--text);
+}
+
+.content-card-emphasis {
+  border: 1px solid rgba(139, 146, 232, 0.35);
+}
+
+.content-card .btn {
+  margin: 1rem 0 0.5rem;
+  text-decoration: none;
+}
+
+.content-note {
+  margin-top: 1rem;
+  font-size: 0.9375rem;
+}
+
+.content-steps,
+.content-list {
+  margin: 0.75rem 0 1rem 1.25rem;
+  color: var(--muted);
+}
+
+.content-steps {
+  list-style: decimal;
+}
+
+.content-list {
+  list-style: disc;
+}
+
+.content-steps li,
+.content-list li {
+  margin-bottom: 0.5rem;
+  padding-left: 0.25rem;
+}
+
+.content-steps li::marker,
+.content-list li::marker {
+  color: var(--secondary);
+}
+
+.content-url {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding: 0.35rem 0.6rem;
+  background: var(--surface);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: var(--secondary);
+  word-break: break-all;
+}
+
 /* --- Footer --- */
 .site-footer {
   background: var(--container-background);
